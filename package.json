@@ -1,0 +1,45 @@
+{
+  "name": "test-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cucumber-js": "npx cucumber-js -b -p default",
+    "prettier": "npx prettier step-definitions/*.ts* --write",
+    "tests": "npm run prettier && npm run cucumber-js ./features/*.feature & node report.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikarav/Test-Automation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikarav/Test-Automation/issues"
+  },
+  "homepage": "https://github.com/nikarav/Test-Automation#readme",
+  "dependencies": {
+    "@cucumber/cucumber": "^8.4.0",
+    "bunyan-logger": "^1.0.0",
+    "cucumber-console-formatter": "^1.0.0",
+    "eslint": "^8.19.0",
+    "gherkin-lint": "^4.2.2",
+    "multiple-cucumber-html-reporter": "^1.21.4",
+    "prettier": "^2.7.1",
+    "selenium-webdriver": "^4.3.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.1",
+    "@types/cucumber": "^7.0.0",
+    "@types/jest": "^28.1.5",
+    "chai": "^4.3.6",
+    "chromedriver": "^103.0.0",
+    "cucumber": "^6.0.7",
+    "cucumber-pretty": "^6.0.1",
+    "cucumber-tsflow": "^4.0.0-preview.7",
+    "jest": "^28.1.3",
+    "ts-jest": "^28.0.5",
+    "ts-node": "^10.8.2",
+    "typescript": "^4.7.4"
+  }
+}
