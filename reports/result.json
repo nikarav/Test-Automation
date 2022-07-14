@@ -1,19 +1,13 @@
 [
   {
-    "keyword": "Feature",
-    "name": "Scenario 1",
-    "line": 1,
-    "id": "scenario-1",
-    "tags": [],
-    "uri": "features/firstScenario.feature",
+    "description": "",
     "elements": [
       {
+        "description": "",
         "id": "scenario-1;visible-button-with-a-text",
-        "keyword": "Scenario",
-        "line": 9,
+        "keyword": "Scenario Outline",
+        "line": 3,
         "name": "Visible button with a text",
-        "tags": [],
-        "type": "scenario",
         "steps": [
           {
             "arguments": [],
@@ -21,11 +15,11 @@
             "line": 4,
             "name": "The user navigates to: \"https://www.danfoss.com/en/\"",
             "match": {
-              "location": "step-definitions/firstScenario.ts:20"
+              "location": "step-definitions/firstScenario.ts:26"
             },
             "result": {
               "status": "passed",
-              "duration": 631000000
+              "duration": 749272750
             }
           },
           {
@@ -34,32 +28,34 @@
             "line": 5,
             "name": "A link containing text: \"Explore Danfoss Product Store\" is visible",
             "match": {
-              "location": "step-definitions/firstScenario.ts:28"
+              "location": "step-definitions/firstScenario.ts:34"
             },
             "result": {
               "status": "passed",
-              "duration": 95000000
+              "duration": 47879082
             }
           }
-        ]
+        ],
+        "tags": [],
+        "type": "scenario"
       }
-    ]
+    ],
+    "id": "scenario-1",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Scenario 1",
+    "tags": [],
+    "uri": "features/firstScenario.feature"
   },
   {
-    "keyword": "Feature",
-    "name": "Scenario 2",
-    "line": 1,
-    "id": "scenario-2",
-    "tags": [],
-    "uri": "features/secondScenario.feature",
+    "description": "",
     "elements": [
       {
+        "description": "",
         "id": "scenario-2;alsense-search-results-are-available",
-        "keyword": "Scenario",
-        "line": 10,
+        "keyword": "Scenario Outline",
+        "line": 3,
         "name": "Alsense search results are available",
-        "tags": [],
-        "type": "scenario",
         "steps": [
           {
             "arguments": [],
@@ -71,7 +67,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 869000000
+              "duration": 656910125
             }
           },
           {
@@ -84,7 +80,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 772000000
+              "duration": 778024416
             }
           },
           {
@@ -97,7 +93,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 250000000
+              "duration": 272659916
             }
           },
           {
@@ -110,28 +106,30 @@
             },
             "result": {
               "status": "passed",
-              "duration": 74000000
+              "duration": 95469499
             }
           }
-        ]
+        ],
+        "tags": [],
+        "type": "scenario"
       }
-    ]
+    ],
+    "id": "scenario-2",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Scenario 2",
+    "tags": [],
+    "uri": "features/secondScenario.feature"
   },
   {
-    "keyword": "Feature",
-    "name": "Scenario 3",
-    "line": 1,
-    "id": "scenario-3",
-    "tags": [],
-    "uri": "features/thirdScenario.feature",
+    "description": "",
     "elements": [
       {
+        "description": "",
         "id": "scenario-3;quick-links-not-visible-in-mobile-view",
-        "keyword": "Scenario",
-        "line": 10,
+        "keyword": "Scenario Outline",
+        "line": 3,
         "name": "Quick Links not visible in mobile view",
-        "tags": [],
-        "type": "scenario",
         "steps": [
           {
             "arguments": [],
@@ -143,7 +141,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 856000000
+              "duration": 815876208
             }
           },
           {
@@ -156,7 +154,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 186000000
+              "duration": 194817791
             }
           },
           {
@@ -169,11 +167,19 @@
             },
             "result": {
               "status": "passed",
-              "duration": 41000000
+              "duration": 44315999
             }
           }
-        ]
+        ],
+        "tags": [],
+        "type": "scenario"
       }
-    ]
+    ],
+    "id": "scenario-3",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Scenario 3",
+    "tags": [],
+    "uri": "features/thirdScenario.feature"
   }
 ]
