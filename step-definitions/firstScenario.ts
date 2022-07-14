@@ -1,10 +1,4 @@
-const {
-  When,
-  Then,
-  BeforeAll,
-  AfterAll,
-  setDefaultTimeout,
-} = require("cucumber");
+import { When, Then, BeforeAll, AfterAll, setDefaultTimeout } from "cucumber";
 import { Builder, By, Key, until, WebDriver } from "selenium-webdriver";
 import { assert } from "chai";
 

@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/nikarav/Test-Automation#readme",
   "dependencies": {
-    "@cucumber/cucumber": "^8.4.0",
+    "@cucumber/cucumber": "^6.4.0",
     "@types/fs-extra": "^9.0.13",
     "@types/lodash": "^4.14.182",
     "@types/node": "^18.0.3",
@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@types/chai": "^4.3.1",
-    "@types/cucumber": "^7.0.0",
+    "@types/cucumber": "^6.0.0",
     "@types/jest": "^28.1.5",
     "chai": "^4.3.6",
     "chromedriver": "^103.0.0",

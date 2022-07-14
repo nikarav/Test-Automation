@@ -1,1 +1,1 @@
-declare module 'cucumber';
+//declare module '@cucumber/cucumber';

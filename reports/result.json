@@ -21,11 +21,11 @@
             "line": 4,
             "name": "The user navigates to: \"https://www.danfoss.com/en/\"",
             "match": {
-              "location": "step-definitions/firstScenario.ts:26"
+              "location": "step-definitions/firstScenario.ts:20"
             },
             "result": {
               "status": "passed",
-              "duration": 1122000000
+              "duration": 631000000
             }
           },
           {
@@ -34,11 +34,11 @@
             "line": 5,
             "name": "A link containing text: \"Explore Danfoss Product Store\" is visible",
             "match": {
-              "location": "step-definitions/firstScenario.ts:34"
+              "location": "step-definitions/firstScenario.ts:28"
             },
             "result": {
               "status": "passed",
-              "duration": 60000000
+              "duration": 95000000
             }
           }
         ]
@@ -71,7 +71,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 746000000
+              "duration": 869000000
             }
           },
           {
@@ -84,7 +84,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 753000000
+              "duration": 772000000
             }
           },
           {
@@ -97,7 +97,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 454000000
+              "duration": 250000000
             }
           },
           {
@@ -110,7 +110,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 68000000
+              "duration": 74000000
             }
           }
         ]
@@ -143,7 +143,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 658000000
+              "duration": 856000000
             }
           },
           {
@@ -156,7 +156,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 211000000
+              "duration": 186000000
             }
           },
           {
@@ -169,7 +169,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25000000
+              "duration": 41000000
             }
           }
         ]
