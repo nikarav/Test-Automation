@@ -1,1 +1,5 @@
 node_modules
+reports/assets
+reports/features
+reports/.DS_Store
+.DS_Store

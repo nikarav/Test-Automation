@@ -1,0 +1,179 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Scenario 1",
+    "line": 1,
+    "id": "scenario-1",
+    "tags": [],
+    "uri": "features/firstScenario.feature",
+    "elements": [
+      {
+        "id": "scenario-1;visible-button-with-a-text",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "Visible button with a text",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "The user navigates to: \"https://www.danfoss.com/en/\"",
+            "match": {
+              "location": "step-definitions/firstScenario.ts:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1122000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "A link containing text: \"Explore Danfoss Product Store\" is visible",
+            "match": {
+              "location": "step-definitions/firstScenario.ts:34"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 60000000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "keyword": "Feature",
+    "name": "Scenario 2",
+    "line": 1,
+    "id": "scenario-2",
+    "tags": [],
+    "uri": "features/secondScenario.feature",
+    "elements": [
+      {
+        "id": "scenario-2;alsense-search-results-are-available",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "Alsense search results are available",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "Scenario2: The user navigates to: \"https://www.danfoss.com/en/\"",
+            "match": {
+              "location": "step-definitions/secondScenario.ts:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 746000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 5,
+            "name": "The user uses a search input field search for a keyword: \"Alsense\"",
+            "match": {
+              "location": "step-definitions/secondScenario.ts:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 753000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "The page with results should contain: a link containing words: \"Alsense IoT cloud and monitoring\"",
+            "match": {
+              "location": "step-definitions/secondScenario.ts:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 454000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "The page with results should contain: at least one link pointing to a \"pdf\" file",
+            "match": {
+              "location": "step-definitions/secondScenario.ts:76"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 68000000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "keyword": "Feature",
+    "name": "Scenario 3",
+    "line": 1,
+    "id": "scenario-3",
+    "tags": [],
+    "uri": "features/thirdScenario.feature",
+    "elements": [
+      {
+        "id": "scenario-3;quick-links-not-visible-in-mobile-view",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "Quick Links not visible in mobile view",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "Scenario3: The user navigates to: \"https://www.danfoss.com/en/\"",
+            "match": {
+              "location": "step-definitions/thirdScenario.ts:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 658000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 5,
+            "name": "The user is in the mobile viewport",
+            "match": {
+              "location": "step-definitions/thirdScenario.ts:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 211000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "\"Quick Links\" should NOT be visible on a mobile device",
+            "match": {
+              "location": "step-definitions/thirdScenario.ts:46"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 25000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
