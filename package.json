@@ -6,7 +6,7 @@
   "scripts": {
     "cucumber-js": "npx cucumber-js -b -p default",
     "prettier": "npx prettier step-definitions/*.ts* --write",
-    "tests": "npm run prettier && npm run cucumber-js ./features/*.feature & node report.js"
+    "tests": "npm run prettier && npm run cucumber-js ./features/*.feature"
   },
   "repository": {
     "type": "git",
