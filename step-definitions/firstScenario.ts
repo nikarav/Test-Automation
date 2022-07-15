@@ -5,7 +5,8 @@ import {
   AfterAll,
   setDefaultTimeout,
 } from "@cucumber/cucumber";
-import { Builder, By, Key, until, WebDriver } from "selenium-webdriver";
+const chrome = require("selenium-webdriver/chrome");
+import { Builder, By, WebDriver } from "selenium-webdriver";
 import { assert } from "chai";
 
 const winston = require("winston");
@@ -14,7 +15,10 @@ let driver: WebDriver;
 
 BeforeAll(async () => {
   setDefaultTimeout(10000);
-  driver = await new Builder().forBrowser("chrome").build();
+  driver = await new Builder()
+    .forBrowser("chrome")
+    .setChromeOptions(new chrome.Options().headless())
+    .build();
   winston.info("Running Scenario 1.");
 });
 
