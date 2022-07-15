@@ -13,11 +13,15 @@ const winston = require("winston");
 
 let driver: WebDriver;
 
+const screen = {
+  width: 1920,
+  height: 1080,
+};
 BeforeAll(async () => {
   setDefaultTimeout(10000);
   driver = await new Builder()
     .forBrowser("chrome")
-    .setChromeOptions(new chrome.Options().headless())
+    .setChromeOptions(new chrome.Options().headless().windowSize(screen))
     .build();
   winston.info("Running Scenario 1.");
 });
@@ -48,9 +52,6 @@ Then("A link containing text: {string} is visible", async (text: string) => {
     By.xpath(`//a[span[span[contains(text(),"${text}")]]]`)
   );
 
-  const searchInput1 = await driver.findElement(
-    By.xpath(`//span[contains(text(),"${text}")]`)
-  );
 
   //await driver.wait(until.elementIsVisible(searchInput), 55000);
   const val = await Promise.resolve(searchInput.getAttribute("href"));
