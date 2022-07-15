@@ -29,7 +29,7 @@ jobs:
     - name: Install Google Chrome # Using shell script to install Google Chrome
       run: |
        chmod +x ./InstallChrome.sh
-        ./scripts/InstallChrome.sh
+        ./InstallChrome.sh
     - run: npm ci
     - run: npm run build --if-present
     - run: npm run tests
