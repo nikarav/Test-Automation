@@ -21,7 +21,7 @@ BeforeAll(async () => {
   setDefaultTimeout(10000);
   driver = await new Builder()
     .forBrowser("chrome")
-    .setChromeOptions(new chrome.Options().headless().windowSize(screen))
+    .setChromeOptions(new chrome.Options().headless())
     .build();
   winston.info("Running Scenario 1.");
 });
