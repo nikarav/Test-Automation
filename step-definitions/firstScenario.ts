@@ -6,7 +6,7 @@ import {
   setDefaultTimeout,
 } from "@cucumber/cucumber";
 const chrome = require("selenium-webdriver/chrome");
-import { Builder, By, WebDriver } from "selenium-webdriver";
+import { Builder, By, until, WebDriver } from "selenium-webdriver";
 import { assert } from "chai";
 
 const winston = require("winston");
@@ -30,6 +30,9 @@ AfterAll(async () => {
 When("The user navigates to: {string}", async (url: string) => {
   winston.info(`Scenario 1: The user navigates to ${url}.`);
   await driver.get(url);
+
+  await driver.wait(until.elementLocated(By.className("coi-banner__accept")));
+
   const searchInput = await driver
     .findElement(By.className("coi-banner__accept"))
     .click();
