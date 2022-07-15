@@ -31,8 +31,6 @@ When("The user navigates to: {string}", async (url: string) => {
   winston.info(`Scenario 1: The user navigates to ${url}.`);
   await driver.get(url);
 
-  await driver.wait(until.elementLocated(By.className("coi-banner__accept")));
-
   const searchInput = await driver
     .findElement(By.className("coi-banner__accept"))
     .click();
@@ -41,6 +39,10 @@ When("The user navigates to: {string}", async (url: string) => {
 Then("A link containing text: {string} is visible", async (text: string) => {
   winston.info(
     `Scenario 1: A link containing text: ${text} should be visible.`
+  );
+
+  await driver.wait(
+    until.elementLocated(By.className("header__logo__link non-decorated"))
   );
   const searchInput = await driver.findElement(
     By.xpath(`//a[span[span[contains(text(),"${text}")]]]`)
