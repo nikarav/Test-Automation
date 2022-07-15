@@ -58,6 +58,10 @@ Then("A link containing text: {string} is visible", async (text: string) => {
 
   */
 
+  /*
+      The remote server cannot handle the XPath and
+      works with other options such as class or id.
+  */
   await driver.wait(
     until.elementLocated(By.className("cta cta--large cta--alpha  )"))
   );
@@ -65,9 +69,13 @@ Then("A link containing text: {string} is visible", async (text: string) => {
     By.className("cta cta--large cta--alpha  )")
   );
 
-  //await driver.wait(until.elementIsVisible(searchInput), 55000);
   const val = await Promise.resolve(searchInput.getAttribute("href"));
+  const text_element = await Promise.resolve(searchInput.getText());
+
+  winston.info(`Scenario 1: Text from element is : ${text_element}.`);
   winston.info(`Scenario 1: Reference Link is ${val}`);
+
+  assert.isTrue(text_element.includes(text));
   assert.isTrue(val != "");
   assert.isTrue(await searchInput.isDisplayed());
 });

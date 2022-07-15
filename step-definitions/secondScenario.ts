@@ -62,18 +62,51 @@ Then(
       `Scenario 2: The page with results should contain: a link containing words: ${words}`
     );
 
+    /*
+      Locally this works. However, just like in the first Scenario
+      XPath is not working in the remote server.
+
+        await driverScenario2.wait(
+          until.elementLocated(By.xpath(`//a[div[contains(text(),"${words}")]]`))
+        );
+
+        const searchInput = await driverScenario2.findElement(
+          By.xpath(`//a[div[contains(text(),"${words}")]]`)
+        );
+    */
     await driverScenario2.wait(
-      until.elementLocated(By.xpath(`//a[div[contains(text(),"${words}")]]`))
+      until.elementLocated(
+        By.className("conditionalLink__2WIeE tile__link clickable")
+      )
     );
 
-    const searchInput = await driverScenario2.findElement(
-      By.xpath(`//a[div[contains(text(),"${words}")]]`)
+    let searchInput = await driverScenario2.findElements(
+      By.className("conditionalLink__2WIeE tile__link clickable")
     );
 
-    const val = await Promise.resolve(searchInput.getAttribute("href"));
-    winston.info(`Scenario 2: Reference Link is ${val}`);
-    assert.isTrue(val != "");
-    assert.isTrue(await searchInput.isDisplayed());
+    const promises = searchInput.map((input) => {
+      return input.getText();
+    });
+
+    let val = await Promise.all(promises);
+
+    let i = 0;
+    let exists = false;
+    for (i = 0; i < val.length; i++) {
+      winston.info(`Scenario 2: ${i},  ${val[i].split("\n")[0]}`);
+      // From the text we only need the first part of the split,
+      // since the text is in the first <div>.
+      const sentence = val[i].split("\n")[0];
+      if (sentence.includes(words)) {
+        exists = true;
+        break;
+      }
+    }
+    const val_href = await Promise.resolve(searchInput[i].getAttribute("href"));
+    winston.info(`Scenario 2: Reference Link is ${val_href}`);
+    assert.isTrue(val_href != "");
+    assert.isTrue(exists);
+    assert.isTrue(await searchInput[i].isDisplayed());
   }
 );
 
@@ -83,7 +116,9 @@ Then(
     winston.info(
       `Scenario 2: The page with results should contain: at least one link pointing to a ${type} file`
     );
-    let searchInput = await driverScenario2.findElements(By.xpath(`//a[div]`));
+    let searchInput = await driverScenario2.findElements(
+      By.className("conditionalLink__2WIeE tile__link clickable")
+    );
 
     const promises = searchInput.map((input) => {
       return input.getAttribute("href");
