@@ -10,8 +10,12 @@ sudo apt-get install unzip
 
 unzip chromedriver_linux64.zip -d .
 
-echo 'export PATH=$PATH:$pwd' >> ~/.bash_profile
-source ~/.bash_profile
-
-
-
+sudo apt update
+sudo apt install -y unzip xvfb libxi6 libgconf-2-4 
+sudo mv chromedriver /usr/bin/chromedriver
+sudo chown root:root /usr/bin/chromedriver
+sudo chmod +x /usr/bin/chromedriver
+npm install chromedriver
+chromedriver --url-base=/wd/hub
+#echo 'export PATH=$PATH:$pwd' >> ~/.bash_profile
+#source ~/.bash_profile
