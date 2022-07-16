@@ -45,20 +45,20 @@ Then("A link containing text: {string} is visible", async (text: string) => {
     `Scenario 1: A link containing text: ${text} should be visible.`
   );
 
-  await driver.wait(
-    until.elementLocated(By.className("header__logo__link non-decorated"))
-  );
-
-  const searchInput = await driver.findElement(
-    By.xpath(`//a[span[span[contains(text(),"${text}")]]]`)
-  );
-
   // await driver.wait(
-  //   until.elementLocated(By.className("cta cta--large cta--alpha  )"))
+  //   until.elementLocated(By.className("header__logo__link non-decorated"))
   // );
+
   // const searchInput = await driver.findElement(
-  //   By.className("cta cta--large cta--alpha  )")
+  //   By.xpath(`//a[span[span[contains(text(),"${text}")]]]`)
   // );
+
+  await driver.wait(
+    until.elementLocated(By.className("cta cta--large cta--alpha  )"))
+  );
+  const searchInput = await driver.findElement(
+    By.className("cta cta--large cta--alpha  )")
+  );
 
   const val = await Promise.resolve(searchInput.getAttribute("href"));
   const text_element = await Promise.resolve(searchInput.getText());
