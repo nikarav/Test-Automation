@@ -21,7 +21,7 @@ BeforeAll(async () => {
   setDefaultTimeout(10000);
   driver = await new Builder()
     .forBrowser("chrome")
-    .setChromeOptions(new chrome.Options().headless())
+    .setChromeOptions(new chrome.Options().headless().windowSize(screen))
     .build();
   winston.info("Running Scenario 1.");
 });
@@ -71,11 +71,11 @@ Then("A link containing text: {string} is visible", async (text: string) => {
 
   const val = await Promise.resolve(searchInput.getAttribute("href"));
   const text_element = await Promise.resolve(searchInput.getText());
-
+  
   winston.info(`Scenario 1: Text from element is : ${text_element}.`);
   winston.info(`Scenario 1: Reference Link is ${val}`);
-
-  assert.isTrue(text_element.includes(text));
+  
+  assert.isTrue(text == text_element)
   assert.isTrue(val != "");
   assert.isTrue(await searchInput.isDisplayed());
 });
