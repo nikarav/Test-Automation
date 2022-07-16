@@ -16,6 +16,6 @@ sudo mv chromedriver /usr/bin/chromedriver
 sudo chown root:root /usr/bin/chromedriver
 sudo chmod +x /usr/bin/chromedriver
 npm install chromedriver
-chromedriver --url-base=/wd/hub
+#chromedriver --url-base=/wd/hub
 #echo 'export PATH=$PATH:$pwd' >> ~/.bash_profile
 #source ~/.bash_profile
