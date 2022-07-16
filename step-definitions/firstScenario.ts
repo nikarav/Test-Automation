@@ -45,36 +45,29 @@ Then("A link containing text: {string} is visible", async (text: string) => {
     `Scenario 1: A link containing text: ${text} should be visible.`
   );
 
-  /*
-    In the local run it works like this:
-
-    ===
-    await driver.wait(
-      until.elementLocated(By.className("header__logo__link non-decorated"))
-    );
-    const searchInput = await driver.findElement(
-      By.xpath(`//a[span[span[contains(text(),"${text}")]]]`)
-    );
-
-  */
-
-  /*
-      The remote server cannot handle the XPath and
-      works with other options such as class or id.
-  */
+  
   await driver.wait(
-    until.elementLocated(By.className("cta cta--large cta--alpha  )"))
+      until.elementLocated(By.className("header__logo__link non-decorated"))
   );
+
   const searchInput = await driver.findElement(
-    By.className("cta cta--large cta--alpha  )")
+      By.xpath(`//a[span[span[contains(text(),"${text}")]]]`)
   );
+
+  
+  // await driver.wait(
+  //   until.elementLocated(By.className("cta cta--large cta--alpha  )"))
+  // );
+  // const searchInput = await driver.findElement(
+  //   By.className("cta cta--large cta--alpha  )")
+  // );
 
   const val = await Promise.resolve(searchInput.getAttribute("href"));
   const text_element = await Promise.resolve(searchInput.getText());
   
   winston.info(`Scenario 1: Text from element is : ${text_element}.`);
   winston.info(`Scenario 1: Reference Link is ${val}`);
-  
+
   assert.isTrue(text == text_element)
   assert.isTrue(val != "");
   assert.isTrue(await searchInput.isDisplayed());

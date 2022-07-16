@@ -13,11 +13,16 @@ const winston = require("winston");
 
 let driverScenario2: WebDriver;
 
+const screen = {
+  width: 1920,
+  height: 1080,
+};
+
 BeforeAll(async () => {
   setDefaultTimeout(10000);
   driverScenario2 = await new Builder()
     .forBrowser("chrome")
-    .setChromeOptions(new chrome.Options().headless())
+    .setChromeOptions(new chrome.Options().headless().windowSize(screen))
     .build();
   winston.info("Running Scenario 2.");
 });
